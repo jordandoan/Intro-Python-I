@@ -22,3 +22,12 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+def make_calendar(month: int = datetime.now().month, year:int = datetime.now().year ) -> None:
+    return calendar.TextCalendar().prmonth(year, month)
+x = input("Make a calendar. Input is \"month, year\": ")
+arr = x.split(',')
+if len(arr) > 2:
+    print("Error! Too many arguments entered.")
+else:
+    make_calendar(int(arr[0]), int(arr[1]))
